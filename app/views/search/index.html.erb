@@ -1,0 +1,10 @@
+<div data-controller="search">
+  <%= form_with(url: "/", method: :get, data: {action: "submit->search#submit"}) do |f| %>
+    <%= label_tag(:query, "Search for") %>
+    <%= text_field_tag :query, params[:query], data: {target: "search.query", action: 'keyup->search#search' } %>
+    <%= submit_tag("Search", class: "btn btn-primary") %>
+  <% end %>
+
+  <span data-search-target="output"></span>
+  </span>
+</div>
